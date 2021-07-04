@@ -54,11 +54,17 @@ POST /api/parks
 PUT /api/parks/{id}
 DELETE /api/parks/{id}
 ```
+This project also has an additional endpoint to find and return a random park from the database
+```
+GET /api/parks/random
+```
 
 #### Example Query
 ```
 GET /api/parks/?location=oregon
 ```
+
+#### Swagger
 
 This project utilizes full swagger documentation that can be found here: https://app.swaggerhub.com/apis-docs/colchapm/ParksApi/0.1
 
@@ -68,6 +74,11 @@ This project utilizes full swagger documentation that can be found here: https:/
 ## Known Bugs
 
 No known bugs at this time
+
+## Improvement Opportunities
+
+* Eventually have all National and State parks included in the database
+* Create an MVC application that interacts with the API
 
 ## Link
 

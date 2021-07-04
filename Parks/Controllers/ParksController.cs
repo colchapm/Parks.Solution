@@ -110,6 +110,17 @@ namespace Parks.Controller
       return NoContent();
     }
 
+    [HttpGet("random")]
+    public async Task<ActionResult<Park>> GetRandom(int id)
+    {
+      int highestId = _db.Parks.Max(u => u.ParkId);
+      Random rnd = new Random();
+      int randomId = rnd.Next(1, highestId);
+      var randomPark = await _db.Parks.FindAsync(randomId);
+
+      return randomPark;
+    }
+
     private bool ParkExists(int id)
     {
       return _db.Parks.Any(e => e.ParkId == id);
